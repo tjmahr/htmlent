@@ -1,0 +1,12 @@
+Package: htmlent
+Title: Data Packages for HTML Entities
+Version: 0.0.0.9000
+Authors@R: person("Tristan", "Mahr", email = "tristan.mahr@gmail.com", role = c("aut", "cre"))
+Description: Exports a list of HTML entities.
+Depends: R (>= 3.4.3)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/tjmahr/htmlent
+BugReports: https://github.com/tjmahr/htmlent/issues
+RoxygenNote: 6.0.1.9000

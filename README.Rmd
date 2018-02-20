@@ -1,0 +1,56 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# htmlent: HTML entities
+
+A simple data package with HTML entities, downloaded from 
+[this page](https://dev.w3.org/html5/html-author/charref).
+
+## Installation
+
+You can install htmlent from GitHub with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("tjmahr/htmlent")
+```
+
+## Example
+
+I am writing some RMarkdown, and I want to express a statistic as the mean
+plus-minus the standard deviation. I can never remember the entity for the
+plus-minus character, so I have to look it up online.
+
+Not anymore. I can just get the entity by using RStudio's autocompletion on the
+`htmlent` object. I type `htmlent::ents$` then hit `tab` to bring up the
+autocompletion and type `plus-m` and find it.
+
+```{r example}
+htmlent::ents$`plus-minus sign`
+```
+
+### Might as well make a dataframe of them all
+
+```{r}
+df <- tibble::data_frame(
+  symbol = unlist(htmlent::ents),
+  entity = paste0("`", symbol, "`"),
+  name = names(htmlent::ents)
+)
+  
+knitr::kable(df)
+```
+
+
+
